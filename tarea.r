@@ -58,4 +58,12 @@ print(qp[qp[,2]==max(qp[,2]), ],header=TRUE)
 plot(dataclean$RA_deg,dataclean$Declination_deg,xlab="Ascencion",ylab="Declinacion")
 
 
+#funcion interesante que calcula la variacion relativa, en porcentaje, de la variable En
+fn <- function(en,min,max){
+  return(100*(max-min)/en)
+}
+#ejemplo de uso de la funcion
+test <- fn(dataclean$Dep_Energy_TeV,dataclean$Ene_Err_min,dataclean$Ene_Err_max)
+
+
 
