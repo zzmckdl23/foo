@@ -54,5 +54,8 @@ for(i in unique(as.POSIXlt(datapr$Time_GMT)$mon)){
 #luego se imprime las filas con mayor numero de eventos
 print(qp[qp[,2]==max(qp[,2]), ],header=TRUE)
 
+#plot de eventos
+plot(dataclean$RA_deg,dataclean$Declination_deg,xlab="Ascencion",ylab="Declinacion")
+
 
 
