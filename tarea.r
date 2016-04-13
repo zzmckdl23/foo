@@ -21,8 +21,8 @@ trackdata <- dataclean[Topology=="Track", ]
 x2 <- mean(showerdata$Med_Ang_Res_deg)
 y2 <- mean(trackdata$Med_Ang_Res_deg)
 
-
-
+#funcion que toma el MJD y lo convierte a POSIX
+f <- function(x){as.POSIXct(x*24*60*60,origin='1858-11-17',tz='GMT')}
 
 
 
