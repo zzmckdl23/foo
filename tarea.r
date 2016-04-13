@@ -27,7 +27,12 @@ f <- function(x){as.POSIXct(x*24*60*60,origin='1858-11-17',tz='GMT')}
 #agregar columna a dataclean
 dataclean[,"Time_GMT"] <- c(f(Time_MJD))
 
-
+#function que bota eventos para un mes en distintos años, deberia entrar 'datanew' y un mes 'x'
+evt_month <- function(data,x){
+p <- as.POSIXlt(subset(data, as.POSIXlt(data$Time_GMT)$mon==x)$Time_GMT)$year
+q <- table(p+1900)
+print(q)
+}
 
 
 
