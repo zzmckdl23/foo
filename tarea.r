@@ -10,8 +10,19 @@ dataclean <- data[good, ]
 attach(dataclean)
 
 #calculo de promedios para distintas topologias
-x<-mean(Med_Ang_Res_deg[Topology=="Shower"])
-y<-mean(Med_Ang_Res_deg[Topology=="Track"])
+
+#metodo 1: directo
+x1<-mean(Med_Ang_Res_deg[Topology=="Shower"])
+y1<-mean(Med_Ang_Res_deg[Topology=="Track"])
+
+#metodo 2: crear subdatos por topologia
+showerdata <- dataclean[Topology=="Shower", ]
+trackdata <- dataclean[Topology=="Track", ]
+x2 <- mean(showerdata$Med_Ang_Res_deg)
+y2 <- mean(trackdata$Med_Ang_Res_deg)
+
+
+
 
 
 
