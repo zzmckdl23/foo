@@ -24,5 +24,10 @@ y2 <- mean(trackdata$Med_Ang_Res_deg)
 #funcion que toma el MJD y lo convierte a POSIX
 f <- function(x){as.POSIXct(x*24*60*60,origin='1858-11-17',tz='GMT')}
 
+#agregar columna a dataclean
+dataclean[,"Time_GMT"] <- c(f(Time_MJD))
+
+
+
 
 
